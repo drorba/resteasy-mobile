@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!--                                                                        -->
+<!-- JBoss, the OpenSource J2EE webOS                                       -->
+<!--                                                                        -->
+<!-- Distributable under LGPL license.                                      -->
+<!-- See terms of license at http://www.gnu.org.                            -->
+<!--                                                                        -->
+<!-- ====================================================================== -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <name>RESTeasy - Mobile</name>
+
+  <groupId>org.jboss.resteasy.mobile</groupId>
+  <artifactId>resteasy-mobile</artifactId>
+  <packaging>jar</packaging>
+
+  <version>1.0.0-SNAPSHOT</version>
+
+  <parent>
+    <groupId>org.jboss</groupId>
+    <artifactId>jboss-parent</artifactId>
+    <version>6</version>
+  </parent>
+
+  <!-- Properties -->
+  <properties>
+    <version.org.apache.httpcomponents>4.0.3</version.org.apache.httpcomponents>
+    <version.org.codehaus.jackson>1.6.3</version.org.codehaus.jackson>
+    <version.org.jboss.resteasy.jaxrs>2.2.1.GA</version.org.jboss.resteasy.jaxrs>
+  </properties>
+  
+  <!-- Source Control -->
+  <scm>
+    <connection>scm:git:git://github.com/tdiesler/resteasy-mobile.git</connection>
+    <developerConnection>scm:git:git@github.com:tdiesler/resteasy-mobile.git</developerConnection>
+    <url>http://github.com/tdiesler/resteasy-mobile</url>
+  </scm>
+  
+  <!-- Dependencies -->
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>${version.org.apache.httpcomponents}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-jaxrs</artifactId>
+      <version>${version.org.codehaus.jackson}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>jaxrs-api</artifactId>
+      <version>${version.org.jboss.resteasy.jaxrs}</version>
+    </dependency>
+  </dependencies>
+
+  <!-- Build -->
+  <build>
+    <plugins>
+    </plugins>
+  </build>
+
+</project>
