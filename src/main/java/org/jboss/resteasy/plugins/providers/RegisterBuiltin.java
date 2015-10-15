@@ -10,7 +10,6 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.LinkedHashSet;
-import java.util.Set;
 
 /**
  * @author <a href="mailto:bill@burkecentral.com">Bill Burke</a>
@@ -21,26 +20,6 @@ public class RegisterBuiltin
 
    private final static Logger logger = Logger.getLogger(RegisterBuiltin.class);
 
-   private static Set<String> DEFAULT_PROVIDER_SET = new LinkedHashSet<String>();
-   static {
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.providers.DataSourceProvider");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.providers.DocumentProvider");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.providers.DefaultTextPlain");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.providers.StringTextStar");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.providers.InputStreamProvider");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.providers.ByteArrayProvider");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.providers.FormUrlEncodedProvider");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.providers.FileProvider");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.providers.StreamingOutputProvider");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.providers.IIOImageProvider");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.providers.jackson.ResteasyJacksonProvider");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.interceptors.CacheControlInterceptor");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.interceptors.encoding.AcceptEncodingGZIPInterceptor");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.interceptors.encoding.ClientContentEncodingHeaderInterceptor");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.interceptors.encoding.GZIPDecodingInterceptor");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.interceptors.encoding.GZIPEncodingInterceptor");
-       DEFAULT_PROVIDER_SET.add("org.jboss.resteasy.plugins.interceptors.encoding.ServerContentEncodingHeaderInterceptor");
-   }
 
    public static void register(ResteasyProviderFactory factory)
    {
@@ -82,11 +61,6 @@ public class RegisterBuiltin
          {
             is.close();
          }
-      }
-      // [TDI] Cannot read Providers from META-INF/services
-      // ServiceLoader is only available from android API 9 
-      if (set.isEmpty()) {
-          set.addAll(DEFAULT_PROVIDER_SET);
       }
       for (String line : set)
       {

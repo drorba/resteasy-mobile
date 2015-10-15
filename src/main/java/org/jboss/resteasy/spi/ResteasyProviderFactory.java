@@ -348,10 +348,6 @@ public class ResteasyProviderFactory extends RuntimeDelegate implements Provider
     */
    public static ResteasyProviderFactory getInstance()
    {
-      // [TDI] Cannot read RuntimeDelegate from META-INF/services
-      // ServiceLoader is only available from android API 9 
-      RuntimeDelegate.setInstance(new ResteasyProviderFactory());
-      
       instance = (ResteasyProviderFactory) RuntimeDelegate.getInstance();
       if (registerBuiltinByDefault) RegisterBuiltin.register(instance);
       return instance;
