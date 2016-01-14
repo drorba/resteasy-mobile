@@ -34,12 +34,6 @@
     <version.org.jboss.resteasy.jaxrs>2.2.1.GA</version.org.jboss.resteasy.jaxrs>
   </properties>
   
-  <!-- Source Control -->
-  <scm>
-    <connection>scm:git:git://github.com/tdiesler/resteasy-mobile.git</connection>
-    <developerConnection>scm:git:git@github.com:tdiesler/resteasy-mobile.git</developerConnection>
-    <url>http://github.com/tdiesler/resteasy-mobile</url>
-  </scm>
   
   <!-- Dependencies -->
   <dependencies>
@@ -65,5 +59,13 @@
     <plugins>
     </plugins>
   </build>
+
+  <distributionManagement> 
+    <repository> 
+      <id>bintray-galusben-maven</id> 
+      <name>galusben-maven</name> 
+      <url>https://api.bintray.com/maven/galusben/maven/drorba-resteasy-mobile/;publish=1</url> 
+    </repository> 
+  </distributionManagement>
 
 </project>
